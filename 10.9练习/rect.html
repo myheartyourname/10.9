@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>笑脸</title>
+	<style>
+		canvas{
+			border: 1px solid red;
+		}
+	</style>
+</head>
+<body>
+	<canvas width="1200" height="600"></canvas>
+	<script>
+		window.onload=function(){
+			let canvas=document.querySelector('canvas');
+			let ctx=canvas.getContext('2d');
+			ctx.beginPath();
+			ctx.strokeStyle='chocolate';
+			ctx.arc(600,300,250,0,Math.PI*2);
+			ctx.stroke();
+
+			ctx.beginPath();
+			ctx.arc(520,200,30,0,Math.PI,true);
+			ctx.stroke();
+
+			ctx.beginPath();
+			ctx.fillStyle='chocolate';
+			ctx.arc(520,205,25,0,Math.PI*2);
+			ctx.fill();
+
+			ctx.beginPath();
+			ctx.arc(680,200,30,0,Math.PI,true);
+			ctx.stroke();
+
+			ctx.beginPath();
+			ctx.fillStyle='chocolate';
+			ctx.arc(680,205,25,0,Math.PI*2);
+			ctx.fill();
+
+			ctx.beginPath();
+			ctx.arc(600,400,100,0,Math.PI);
+			ctx.stroke();
+		}
+	</script>
+</body>
+</html>

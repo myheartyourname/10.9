@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>圆环百分比进度</title>
+	<style>
+		canvas{
+			border: 1px solid red;
+		}
+	</style>
+</head>
+<body>
+	<canvas width='1200' height='600'></canvas>
+	<script>
+		window.onload=function(){
+			let canvas=document.querySelector('canvas');
+			let ctx=canvas.getContext('2d');
+			// let t=setTimeout(fn,20);
+			let t;
+			let num=1;
+			let n=79;
+            
+            fn();
+            function fn(){
+            	num++;
+            	if(num==n){
+            		// clearTimeout(t);
+            		cancelAnimationFrame(t);
+            	}else{
+            		// t=setTimeout(fn,20,75);
+            		t=requestAnimationFrame(fn);
+            	}
+            	let rad=Math.PI/50*num;
+            	ctx.clearRect(0,0,1200,600);
+
+            	ctx.beginPath();
+                ctx.arc(600,300,100,-Math.PI/2,rad-Math.PI/2);
+                ctx.lineWidth=5;
+                ctx.lineCap='round';
+                ctx.stroke();
+
+                ctx.font='30px sans-serif';
+                ctx.textAlign='center';
+                ctx.textBaseline='middle';
+                ctx.fillText(`${num}%`,600,300);
+            }
+            
+		}
+	</script>
+</body>
+</html>
